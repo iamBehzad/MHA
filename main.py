@@ -1,6 +1,9 @@
 from imports import *
+from ade import *
+from arde import *
+from helpers import *
 
-funcs = opfunu.get_functions_based_classname("2015")[:5]
+funcs = opfunu.get_functions_based_classname("2017")
 benchmarks = []
 
 # Initialize the problems dictionary
@@ -18,13 +21,13 @@ for i, benchmark in enumerate(funcs):
 
 # Define models (PSO, WOA, GA, DE, AOA, SCSO)
 models = [
-    ade(epoch=100, pop_size=30),
-    PSO.OriginalPSO(epoch=100, pop_size=30),
-    WOA.OriginalWOA(epoch=100, pop_size=30),
-    GA.BaseGA(epoch=100, pop_size=30),
-    DE.OriginalDE(epoch=100, pop_size=30),
-    AOA.OriginalAOA(epoch=100, pop_size=30),
-    SCSO.OriginalSCSO(epoch=100, pop_size=30),
+    ARDE(epoch=500, pop_size=30),
+    PSO.OriginalPSO(epoch=500, pop_size=30),
+    WOA.OriginalWOA(epoch=500, pop_size=30),
+    GA.BaseGA(epoch=500, pop_size=30),
+    DE.OriginalDE(epoch=500, pop_size=30),
+    AOA.OriginalAOA(epoch=500, pop_size=30),
+    SCSO.OriginalSCSO(epoch=500, pop_size=30),
 ]
 
 # Define termination criteria
@@ -37,7 +40,7 @@ if __name__ == "__main__":
     multitask = Multitask(
         algorithms=models,
         problems=problems,
-        terminations=(term,),
+        #terminations=(term,),
         modes=("single",),  # Modes can be adjusted as needed
         n_workers=4
     )

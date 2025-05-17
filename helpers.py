@@ -4,8 +4,8 @@ from imports import *
 # Constants
 BEST_FIT_FOLDER = 'history/best_fit'
 CONVERGENCE_FOLDER = 'history/convergence'
-ALGORITHMS = ['ADE', 'OriginalPSO', 'OriginalWOA', 'BaseGA', 'OriginalDE', 'OriginalAOA', 'OriginalSCSO' ]
-PROPOSED_ALGORITHM = 'ADE'
+ALGORITHMS = ['ARDE', 'OriginalPSO', 'OriginalWOA', 'BaseGA', 'OriginalDE', 'OriginalAOA', 'OriginalSCSO' ]
+PROPOSED_ALGORITHM = 'ARDE'
 RESULT_FILENAME = 'results.xlsx'
 OUTPUT_FOLDER = 'convergence_curves'
 
